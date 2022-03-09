@@ -4,20 +4,12 @@ import classes from './Counter.module.css';
 import { counterActions } from '../store/counterSlice';
 import { playAudio } from '../tools/tools';
 
-// useStore = get access to the whole sotr
+// useStore = get access to the whole store
 // useSelector get access to a part of a state managed by the store
 // connect is used by classbased components, used as a wrapper of our component to connect the class component to the store
 
 const Counter = () => {
-  /*
-      auto sets up a subscription to the reux store for this component,
-      so the component will be updated and get the latest counter value
-      whenever that data changes in the redux store
-  
-      changes to the reux store causea automatically the cpo,ponent to be re-excecuted
-  
-      react redux also automatically clears the subscription if the component gets unmounted
-   */
+
   const dispatch = useDispatch();
   const counter = useSelector(state => state.counter.counter);
   const showCounter = useSelector(state => state.counter.showCounter);
